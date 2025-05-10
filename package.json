@@ -8,7 +8,6 @@
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview",
-        "prepare": "husky",
         "test": "vitest --ui --api 9527 --passWithNoTests",
         "coverage": "vitest --ui --coverage  --passWithNoTests",
         "format": "prettier --ignore-path .gitignore --write \"**/*.{ts,tsx}\""

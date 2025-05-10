@@ -47,7 +47,6 @@ export default function Form({
             major: major || '',
         } as FormValues,
         onSubmit: ({value}) => {
-            console.log('value', value);
             navigate({to: '/announcement', search: value}); // simple and correct
         },
     });
@@ -63,6 +62,11 @@ export default function Form({
 
     return (
         <>
+            {form.baseStore.state.isSubmitting && (
+                <div className="absolute inset-0 z-10 flex items-center justify-center bg-black/50">
+                    <div className="h-12 w-12 animate-spin rounded-full border-t-4 border-[#F52222]" />
+                </div>
+            )}
             <form
                 className="flex flex-col gap-4"
                 onSubmit={(e) => {
@@ -93,7 +97,7 @@ export default function Form({
                                     </Label>
                                     <Input
                                         placeholder="somchai"
-                                        className="text-white"
+                                        className="text-white selection:bg-blue-500 selection:text-white"
                                         id={field.name}
                                         name={field.name}
                                         value={field.state.value}
@@ -129,7 +133,7 @@ export default function Form({
                                 </Label>
                                 <Input
                                     placeholder="Lukna"
-                                    className="text-white"
+                                    className="text-white selection:bg-blue-500 selection:text-white"
                                     id={field.name}
                                     name={field.name}
                                     value={field.state.value}
