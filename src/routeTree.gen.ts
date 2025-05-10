@@ -11,14 +11,14 @@
 // Import Routes
 
 import {Route as rootRoute} from './routes/__root';
-import {Route as AboutImport} from './routes/about';
+import {Route as AnnouncementImport} from './routes/announcement';
 import {Route as IndexImport} from './routes/index';
 
 // Create/Update Routes
 
-const AboutRoute = AboutImport.update({
-    id: '/about',
-    path: '/about',
+const AnnouncementRoute = AnnouncementImport.update({
+    id: '/announcement',
+    path: '/announcement',
     getParentRoute: () => rootRoute,
 } as any);
 
@@ -39,11 +39,11 @@ declare module '@tanstack/react-router' {
             preLoaderRoute: typeof IndexImport;
             parentRoute: typeof rootRoute;
         };
-        '/about': {
-            id: '/about';
-            path: '/about';
-            fullPath: '/about';
-            preLoaderRoute: typeof AboutImport;
+        '/announcement': {
+            id: '/announcement';
+            path: '/announcement';
+            fullPath: '/announcement';
+            preLoaderRoute: typeof AnnouncementImport;
             parentRoute: typeof rootRoute;
         };
     }
@@ -53,37 +53,37 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
     '/': typeof IndexRoute;
-    '/about': typeof AboutRoute;
+    '/announcement': typeof AnnouncementRoute;
 }
 
 export interface FileRoutesByTo {
     '/': typeof IndexRoute;
-    '/about': typeof AboutRoute;
+    '/announcement': typeof AnnouncementRoute;
 }
 
 export interface FileRoutesById {
     __root__: typeof rootRoute;
     '/': typeof IndexRoute;
-    '/about': typeof AboutRoute;
+    '/announcement': typeof AnnouncementRoute;
 }
 
 export interface FileRouteTypes {
     fileRoutesByFullPath: FileRoutesByFullPath;
-    fullPaths: '/' | '/about';
+    fullPaths: '/' | '/announcement';
     fileRoutesByTo: FileRoutesByTo;
-    to: '/' | '/about';
-    id: '__root__' | '/' | '/about';
+    to: '/' | '/announcement';
+    id: '__root__' | '/' | '/announcement';
     fileRoutesById: FileRoutesById;
 }
 
 export interface RootRouteChildren {
     IndexRoute: typeof IndexRoute;
-    AboutRoute: typeof AboutRoute;
+    AnnouncementRoute: typeof AnnouncementRoute;
 }
 
 const rootRouteChildren: RootRouteChildren = {
     IndexRoute: IndexRoute,
-    AboutRoute: AboutRoute,
+    AnnouncementRoute: AnnouncementRoute,
 };
 
 export const routeTree = rootRoute
@@ -97,14 +97,14 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
-        "/about"
+        "/announcement"
       ]
     },
     "/": {
       "filePath": "index.tsx"
     },
-    "/about": {
-      "filePath": "about.tsx"
+    "/announcement": {
+      "filePath": "announcement.tsx"
     }
   }
 }
