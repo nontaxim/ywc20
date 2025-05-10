@@ -93,7 +93,7 @@ export default function Form({
                                     </Label>
                                     <Input
                                         placeholder="somchai"
-                                        className="text-white"
+                                        className="text-white selection:bg-blue-500 selection:text-white"
                                         id={field.name}
                                         name={field.name}
                                         value={field.state.value}
@@ -129,7 +129,7 @@ export default function Form({
                                 </Label>
                                 <Input
                                     placeholder="Lukna"
-                                    className="text-white"
+                                    className="text-white selection:bg-blue-500 selection:text-white"
                                     id={field.name}
                                     name={field.name}
                                     value={field.state.value}
