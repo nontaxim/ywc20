@@ -11,7 +11,7 @@ import {
     SelectTrigger,
     SelectValue,
 } from './ui/select';
-import type {Major, MajorKey} from '@/types/candidates.types';
+import type {MajorKey} from '@/types/candidates.types';
 
 function FieldInfo({field}: {field: AnyFieldApi}) {
     return (
@@ -52,12 +52,12 @@ export default function Form({
     });
     const majorOptions: {
         value: string;
-        label: Major;
+        label: string;
     }[] = [
-        {value: 'design', label: 'web_design'},
-        {value: 'content', label: 'web_content'},
-        {value: 'programming', label: 'web_programming'},
-        {value: 'marketing', label: 'web_marketing'},
+        {value: 'design', label: 'Web Design'},
+        {value: 'content', label: 'Web Content'},
+        {value: 'programming', label: 'Web Programming'},
+        {value: 'marketing', label: 'Web Marketing'},
     ];
 
     return (
@@ -132,7 +132,7 @@ export default function Form({
                                     <span className="text-[#F52222]">*</span>
                                 </Label>
                                 <Input
-                                    placeholder="Lukna"
+                                    placeholder="lukna"
                                     className="text-white selection:bg-blue-500 selection:text-white"
                                     id={field.name}
                                     name={field.name}
@@ -182,7 +182,7 @@ export default function Form({
                                         }
                                     >
                                         <SelectTrigger className="w-full text-white">
-                                            <SelectValue placeholder="Major" />
+                                            <SelectValue placeholder="major" />
                                         </SelectTrigger>
                                         <SelectContent className="bg-black text-white">
                                             {majorOptions.map((option) => (

@@ -24,7 +24,7 @@ function Index() {
             <div className="text-center text-4xl font-bold text-white">
                 Candidate Announcement
             </div>
-            <Card className="w-2/3 bg-[linear-gradient(rgb(0,0,0)_0%,rgb(0,0,0)_50%,rgb(25,2,0)_100%)] bg-[length:contain] bg-[position:0%_0%] p-8">
+            <Card className="w-full border-0 bg-[linear-gradient(rgb(0,0,0)_0%,rgb(0,0,0)_50%,rgb(25,2,0)_100%)] bg-[length:contain] bg-[position:0%_0%] p-0 px-4 sm:w-2/3 sm:border sm:p-8 sm:px-8">
                 <Form
                     firstName={firstName}
                     lastName={lastName}
